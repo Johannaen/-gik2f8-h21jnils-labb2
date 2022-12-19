@@ -106,30 +106,26 @@ class Api {
       .catch((err) => console.log(err));
   }
 
-  /* gjort en request */ 
-  update (id) {
+  /* gjort en request , metoden är asynkron. */ 
+  update (id, data) {
     const JSONData = JSON.stringify(data);
     console.log(`Sending ${JSONData} to ${this.url}`);
 
-    const request = new Request(this.url, {
+    const request = new Request(`${this.url}/${id}`, {
       method: 'PATCH',
       body: JSONData,
       headers: {
         'content-type': 'application/json'
       }
     })
-
+    return fetch( 
+    request      
+    )
+    .then((result) => result)
+    .catch((err) => console.log(err));
   }
-  
-  /***********************Labb 2 ***********************/
-  /* Här skulle det vara lämpligt att skriva en metod likt getAll, create och delete anropas från script.js när någon har markerat en 
-  uppgift som färdig. Denna metod bör ansvara för att göra en PUT eller PATCH-förfrågan till vårt backend, precis som create-metoden 
-  ansvarar för att göra ett POST-anrop. Metoden här ska alltså motsvara Update = PUT/PATCH. En sådan förfrågan görs med hjälp av fetch(). 
-  
-  Beroende på om ni gör frontend eller backend först i labben behöver ni på något av ställena bestämma er för en av metoderna PUT eller 
-  PATCH för denna förfrågan. (Du får välja själv, läs på om vad som verkar mest vettigt för din lösning). Använder du metoden PATCH här 
-  behöver i alla fall det vara patch som tas emot i servern också, app.patch(...), och vice versa om du väljer PUT. 
-  */
+  }
+
 
   /*   
   För att utföra en förfrågan med hjälp av fetch() behöver servern veta några saker om förfrågan (request). Först och främst behövs en url 
@@ -154,4 +150,5 @@ class Api {
   */
 
   /***********************Labb 2 ***********************/
-}
+
+
