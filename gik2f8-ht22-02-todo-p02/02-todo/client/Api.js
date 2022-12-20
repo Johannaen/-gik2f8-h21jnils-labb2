@@ -127,28 +127,5 @@ class Api {
   }
 
 
-  /*   
-  För att utföra en förfrågan med hjälp av fetch() behöver servern veta några saker om förfrågan (request). Först och främst behövs en url 
-  dit förfrågan ska skickas, sedan behövs också ett objekt med inställningar och detaljer om förfrågan, detta objekt kallas vidare "{options}".
-   Url och {options} kan sättas antingen i ett requestobjekts konstruktor; new Request(url, {options}), såsom det görs i create-metoden. 
-   Eller så skulle man kunna ange allt som annars skulle ha skickats till Request-objektets konstruktor inom parenteserna hos fetch() istället; 
-   fetch(url, {options})
-  
-  Här finns mer info om fetch-metoden: 
-  https://developer.mozilla.org/en-US/docs/Web/API/fetch.
-  */
-
-  /* Precis som vid create behöver även här {options} innehålla egenskapen body - dvs. de data som ska skickas till server. */
-
-  /* Det finns några sätt att utforma det som ska skickas i förfrågans body. Oavsett vad vi väljer ska det först översättas till JSON. 
-  
-  Alternativ 1: body består av ett helt task-objekt, som också inkluderar förändringen. Exempel: {id: 1,  title: "x", description: "x", dueDate: "x", completed: true/false}
-  Alternativ 2: request-objektets body består bara av förändringarna och vilken uppgift som ska förändras. Exempel: {id: 1, completed: true/false }
-  
-  Om du hittar något annat sätt som funkar för dig, använd för all del det, så länge det uppnår samma sak. :)
-  
-  */
-
-  /***********************Labb 2 ***********************/
 
 
