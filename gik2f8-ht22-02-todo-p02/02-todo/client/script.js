@@ -117,8 +117,8 @@ function renderTask({ id, title, description, dueDate, completed }) {
   let html = `
     <li class="select-none mt-2 py-2 border-b border-purple-900">
       <div class="flex items-center">
-      <input id="default-checkbox" type="checkbox" value="" onclick="check(event, ${id})"  class="w-6 h-6 text-blue-300 mr-5 bg-pink-900 
-      rounded border-pink.900 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-pink-800 focus:ring-2 
+      <input id="default-checkbox" type="checkbox" value="" onclick="check(event, ${id})"  class="w-6 h-6 accent-pink-300 text-white mr-5 bg-pink-900 
+      rounded border-pink-900 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-pink-800 focus:ring-2 
       dark:bg-pink-700 dark:border-pink-600" `; 
       completed && (html += `checked`);
       html +=`>
