@@ -115,24 +115,24 @@ function renderList() {
 
 function renderTask({ id, title, description, dueDate, completed }) {
   let html = `
-    <li class="select-none mt-2 py-2 border-b border-amber-300">
+    <li class="select-none mt-2 py-2 border-b border-purple-900">
       <div class="flex items-center">
-      <input id="default-checkbox" type="checkbox" value="" onclick="check(event, ${id})" class="w-4 h-4 text-blue-600 bg-gray-100 
-      rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 
-      dark:bg-gray-700 dark:border-gray-600" `; 
+      <input id="default-checkbox" type="checkbox" value="" onclick="check(event, ${id})"  class="w-6 h-6 text-blue-300 mr-5 bg-pink-900 
+      rounded border-pink.900 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-pink-800 focus:ring-2 
+      dark:bg-pink-700 dark:border-pink-600" `; 
       completed && (html += `checked`);
       html +=`>
-        <h3 class="mb-3 flex-1 text-xl font-bold text-pink-800 uppercase">${title}</h3>
+        <h3 class=" flex-1 text-xl font-bold text-purple-900 uppercase">${title}</h3>
         <div>
           <span>${dueDate}</span>
-          <button onclick="deleteTask(${id})" class="inline-block bg-amber-500 text-xs text-amber-900 border border-white px-3 py-1 rounded-md ml-2">Ta bort</button>
+          <button onclick="deleteTask(${id})" class="inline-block bg-purple-300 text-xs text-purple-900 border border-purple-900 px-5 py-1 rounded-md ml-2">Ta bort</button>
         </div>
       </div>`;
 
   
   description &&
     (html += `
-      <p class="ml-8 mt-2 text-xs italic">${description}</p>
+      <p class="ml-12 mt-2 text-xs italic">${description}</p>
   `);
 
   html += `
